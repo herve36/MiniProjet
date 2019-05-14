@@ -14,4 +14,6 @@ public interface ServiceGeneric<T> {
 
 	public List<T> find(Class<T> obj);
 	
+	public List<T> findAll(Class<T> obj);
+	
 }

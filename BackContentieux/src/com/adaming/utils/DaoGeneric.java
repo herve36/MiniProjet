@@ -8,10 +8,12 @@ public interface DaoGeneric<T> {
 
 	public void update(T obj);
 
-	public void delete(T obj);
+	public void delete( T obj);
 
 	public T getById(Class<T> obj, Long id);
 
 	public List<T> find(Class<T> obj);
+	
+	public List<T> findAll(Class<T> obj);
 
 }

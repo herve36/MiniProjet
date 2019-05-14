@@ -32,9 +32,10 @@ public class DaoGenericImpl<T> implements DaoGeneric<T> {
 		session.update(obj);
 	}
 
-	public void delete(T obj) {
+	public void delete( T obj) {
 		// TODO Auto-generated method stub
 		Session session = this.sessionFactory.getCurrentSession();
+		
 		session.delete(obj);
 	}
 
@@ -48,5 +49,15 @@ public class DaoGenericImpl<T> implements DaoGeneric<T> {
 		Criteria criteria = session.createCriteria(obj);
 		return criteria.list();
 	}
+
+	@Override
+	public List<T> findAll(Class<T> obj) {
+		// TODO Auto-generated method stub
+		Session session=this.sessionFactory.getCurrentSession();
+		Criteria crit=session.createCriteria(obj);
+		return crit.list();
+	}
+
+
 	
 }

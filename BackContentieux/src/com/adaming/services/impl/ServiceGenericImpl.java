@@ -33,7 +33,7 @@ public class ServiceGenericImpl<T> implements ServiceGeneric<T> {
 
 	public void delete(T obj) {
 		daoGeneric.delete(obj);
-
+		
 	}
 
 	public T getById(Class<T> obj, Long id) {
@@ -42,6 +42,13 @@ public class ServiceGenericImpl<T> implements ServiceGeneric<T> {
 
 	public List<T> find(Class<T> obj) {
 		return daoGeneric.find(obj);
+	}
+
+	@Override
+	public List<T> findAll(Class<T> obj) {
+		// TODO Auto-generated method stub
+		
+		return daoGeneric.findAll(obj);
 	}
 
 }

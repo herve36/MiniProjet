@@ -29,8 +29,8 @@ public class PhaseController {
 	}
 	
 	@RequestMapping(value="phase", method=RequestMethod.POST)
-	public Phase savePhase(@RequestBody Phase phase) {
-		return phaseService.update(phase);
+	public void savePhase(@RequestBody Phase phase) {
+		phaseService.update(phase);
 	}
 	
 	@RequestMapping(value="phase/{id}", method=RequestMethod.DELETE)
