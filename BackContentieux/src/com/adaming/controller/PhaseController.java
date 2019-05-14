@@ -40,14 +40,14 @@ public class PhaseController {
 	}
 	
 	@RequestMapping(value="phase", method=RequestMethod.PUT)
-	public Phase updatePhase(@PathVariable("id") Long id, @RequestBody Phase phase) {
+	public void updatePhase(@PathVariable("id") Long id, @RequestBody Phase phase) {
 		
 		Phase currentUser= phaseService.getById(Phase.class, id);
 		currentUser.setNomPhase(phase.getNomPhase());
 		currentUser.setDateDebutPhase(phase.getDateDebutPhase());
 		currentUser.setDateFinPhase(phase.getDateFinPhase());
 		
-		return null;
+		phaseService.update(currentUser);
 	}
 	
 }
